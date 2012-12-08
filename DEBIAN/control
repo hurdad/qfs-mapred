@@ -1,0 +1,8 @@
+Package: qfs-mapred
+Version: 1.0-1
+Section: base
+Priority: optional
+Architecture: armhf
+Depends: libboost-thread1.49.0,libboost-program-options1.49.0,libboost-regex1.49.0,libgearman6,qfs-client
+Maintainer: <hurdad@gmail.com>
+Description: A simple streaming map reduce implementation in C++ using qfs and gearmand
