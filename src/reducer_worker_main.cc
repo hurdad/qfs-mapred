@@ -48,9 +48,9 @@ int main(int args, char *argv[]) {
 			boost::program_options::value<uint32_t>(&count)->default_value(0),
 			"Number of jobs to run before exiting")("timeout,u",
 			boost::program_options::value<int>(&timeout)->default_value(-1),
-			"Timeout in milliseconds")("path_to_qfs_bin_tools,p",
+			"Timeout in milliseconds")("path_to_qfs_bin_tools",
 			boost::program_options::value<string>(&path_to_qfs_bin_tools)->default_value(
-					"/home/alex/qfs/build/release/bin/tools/"),
+					"/opt/qc/qfs/client/bin/"),
 			"Path to qfs tools folder");
 	;
 

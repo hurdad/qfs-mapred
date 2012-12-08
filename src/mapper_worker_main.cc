@@ -50,10 +50,10 @@ int main(int args, char *argv[]) {
 			boost::program_options::value<int>(&timeout)->default_value(-1),
 			"Timeout in milliseconds")("path_to_qfs_bin_tools",
 			boost::program_options::value<string>(&path_to_qfs_bin_tools)->default_value(
-					"/home/alex/qfs/build/release/bin/tools/"),
+					"/opt/qc/qfs/client/bin/"),
 			"Path to qfs tools folder")("path_to_qfs_mapred_bin",
 			boost::program_options::value<string>(&path_to_qfs_mapred_bin)->default_value(
-					"/home/alex/workspace/qfs_mapred/src/"),
+					"/opt/hurdad/qfs-mapred/bin//"),
 			"Path to qfs_mapred bin folder");
 
 	boost::program_options::variables_map vm;
