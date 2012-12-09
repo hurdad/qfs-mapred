@@ -63,7 +63,7 @@ def start(daemon):
 def stop(daemon):
     r = redis.Redis(redis_host, redis_port, db=0)
     keys = r.keys('qfs-mapred:%s:%s' % (daemon, env.host))
-    if keys[0]:
+    if keys:
         pid = r.get(keys[0])
 	if pid:
        	    sudo("kill %s" % pid)
@@ -72,7 +72,7 @@ def stop(daemon):
 def status(daemon):
     r = redis.Redis(redis_host, redis_port, db=0)
     keys = r.keys('qfs-mapred:%s:%s' % (daemon, env.host))
-    if keys[0]:
+    if keys:
         pid = r.get(keys[0])
 	if pid:
             ret = ps(pid)
