@@ -16,10 +16,12 @@ log_path = "/opt/hurdad/qfs-mapred/log/"
 qfs_tool_bin_path = "/opt/qc/qfs/client/bin/"
 qfs_client_lib_path = "/opt/qc/qfs/client/lib/"
 worker_user = 'mapred'
+
 redis_host = 'localhost'
 redis_port = 6379
-gearman_job_server_hostname = "10.10.0.5"
-gearman_job_server_port = 7000
+
+gearman_job_server_hostname = "10.10.0.14"
+gearman_job_server_port = 4730
 
 def start_all():
 
@@ -60,18 +62,20 @@ def start(daemon):
  
 def stop(daemon):
     r = redis.Redis(redis_host, redis_port, db=0)
-    key = r.keys('qfs-mapred:%s:%s' % (daemon, env.host))
-    if key:
-        pid = r.get(key)
-        sudo("kill %s" % pid)
-        r.delete(key)
+    keys = r.keys('qfs-mapred:%s:%s' % (daemon, env.host))
+    if keys[0]:
+        pid = r.get(keys[0])
+	if pid:
+       	    sudo("kill %s" % pid)
+            r.delete(keys[0])
 
 def status(daemon):
     r = redis.Redis(redis_host, redis_port, db=0)
-    key = r.keys('qfs-mapred:%s:%s' % (daemon, env.host))
-    if key:
-        pid = r.get(key)
-        ret = ps(pid)
+    keys = r.keys('qfs-mapred:%s:%s' % (daemon, env.host))
+    if keys[0]:
+        pid = r.get(keys[0])
+	if pid:
+            ret = ps(pid)
     
 def ps(pid):
     """Get process info for the `daemon`."""
