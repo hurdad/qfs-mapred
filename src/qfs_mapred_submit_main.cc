@@ -1,11 +1,8 @@
 /*
- ============================================================================
- Name        : qfs_mapred_submit.cpp
- Author      : Alexander Hurd
- Version     :
- Copyright   : Your copyright notice
- Description :
- ============================================================================
+ * qfs_mapred_submit_main.cc
+ *
+ *  Created on: Nov 21, 2012
+ *      Author: alex
  */
 
 #include <cstdlib>
@@ -18,7 +15,6 @@
 #include <list>
 #include <libgearman/gearman.h>
 #include <boost/program_options.hpp>
-
 
 #include <boost/uuid/uuid.hpp>
 #include <boost/uuid/uuid_generators.hpp>

@@ -1,11 +1,8 @@
 /*
- ============================================================================
- Name        : mapper_worker_main.cpp
- Author      : Alexander Hurd
- Version     :
- Copyright   :
- Description :
- ============================================================================
+ * mapper_worker_main.cc
+ *
+ *  Created on: Nov 21, 2012
+ *      Author: alex
  */
 
 #include <cerrno>
@@ -53,7 +50,7 @@ int main(int args, char *argv[]) {
 					"/opt/qc/qfs/client/bin/"),
 			"Path to qfs tools folder")("path_to_qfs_mapred_bin",
 			boost::program_options::value<string>(&path_to_qfs_mapred_bin)->default_value(
-					"/opt/hurdad/qfs-mapred/bin//"),
+					"/opt/hurdad/qfs-mapred/bin/"),
 			"Path to qfs_mapred bin folder");
 
 	boost::program_options::variables_map vm;

@@ -72,8 +72,15 @@ public:
 
 			//write!
 			int res = m_KfsClient->AtomicRecordAppend(fd, my_data.c_str(), my_data.size());
+
+			//check failure
+			if (res < 0)
+				cout << "AtomicRecordAppend failed, with error: "
+					 << res << endl;
+
+			//check size
 			if (res != (int) my_data.size())
-				cout << "Atomic write err" <<endl;
+				cout << "Atomic write err" << endl;
 
 			// Make sure we can be interrupted
 			boost::this_thread::interruption_point();
@@ -88,7 +95,7 @@ public:
 				+ boost::lexical_cast<string>(partition);
 
 		int fd;
-		if ((fd = m_KfsClient->Open(mapper_partition_file.c_str(), O_APPEND))
+		if ((fd = m_KfsClient->Open(mapper_partition_file.c_str(), O_CREAT|O_APPEND|O_WRONLY))
 				< 0) {
 			cout << "Mapper Partition File Open on : " << mapper_partition_file
 					<< " failed: " << KFS::ErrorCodeToStr(fd) << endl;

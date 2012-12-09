@@ -152,7 +152,7 @@ static void *sorter(gearman_job_st *job, void *context, size_t *result_size,
 			+ payload.qfs_meta_server_name + " -p "
 			+ boost::lexical_cast<string>(payload.qfs_meta_server_port) + " -k "
 			+ payload.qfs_partition_file_input
-			+ " -d - | " + path_to_qfs_mapred_bin + "kvsorter | " + path_to_qfs_bin_tools + "cptoqfs -s " + payload.qfs_meta_server_name
+			+ " -S -d - | " + path_to_qfs_mapred_bin + "kvsorter | " + path_to_qfs_bin_tools + "cptoqfs -s " + payload.qfs_meta_server_name
 			+ " -p " + boost::lexical_cast<string>(payload.qfs_meta_server_port)
 			+ " -d - -k " + payload.qfs_partition_file_output + " -S";
 
