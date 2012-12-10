@@ -15,6 +15,10 @@ AC_CHECK_LIB([gearman], [main], [],[
          echo "gearman library is required for this program"
          exit -1])
 
+AC_CHECK_LIB([pthread], [main], [],[
+         echo "pthread library is required for this program"
+         exit -1])
+
 
 AC_CANONICAL_SYSTEM
 AM_INIT_AUTOMAKE()
