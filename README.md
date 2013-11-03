@@ -70,9 +70,10 @@ python examples/sampleservers/sample_setup.py -a install
 cd $BASEPATH
 git clone https://github.com/hurdad/qfs-mapred.git
 cd qfs-mapred
+touch README
 ./autogen.sh
-export CPPFLAGS=-I$BASEPATH/build/release/include
-export LDFLAGS=-L$BASEPATH/build/release/lib
+export CPPFLAGS=-I${BASEPATH}/qfs/build/release/include
+export LDFLAGS=-L${BASEPATH}/qfs/build/release/lib
 ./configure --prefix=$(pwd)
 make && make install
 ```
