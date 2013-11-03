@@ -1,13 +1,3 @@
-/*
- ============================================================================
- Name        : reducer_worker.cpp
- Author      : Alexander Hurd
- Version     :
- Copyright   :
- Description :
- ============================================================================
- */
-
 #include <cerrno>
 #include <cstdio>
 #include <cstdlib>

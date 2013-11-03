@@ -1,10 +1,3 @@
-/*
- * sorter_worker_main.cc
- *
- *  Created on: Nov 21, 2012
- *      Author: alex
- */
-
 #include <cerrno>
 #include <cstdio>
 #include <cstdlib>
@@ -44,7 +37,7 @@ int main(int args, char *argv[]) {
 			"Port number use for gearmand connection")("count,c",
 			boost::program_options::value<uint32_t>(&count)->default_value(0),
 			"Number of jobs to run before exiting")("timeout,u",
-			boost::program_options::value<int>(&timeout)->default_value(-1),
+			boost::program_options::value<int>(&timeout)->default_value(1000),
 			"Timeout in milliseconds")("path_to_qfs_bin_tools",
 			boost::program_options::value<string>(&path_to_qfs_bin_tools)->default_value(
 					"/opt/qc/qfs/client/bin/"),
