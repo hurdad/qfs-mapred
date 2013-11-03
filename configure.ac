@@ -3,6 +3,16 @@ dnl Process this file with autoconf to produce a configure script.
 AC_PREREQ(2.59)
 AC_INIT(qfs_mapred, 1.0)
 
+AC_CHECK_FUNCS([iswprint]) 
+AC_CHECK_HEADERS([fcntl.h])
+AC_CHECK_HEADER_STDBOOL
+AC_C_INLINE
+AC_FUNC_MALLOC
+AC_TYPE_INT64_T
+AC_TYPE_SIZE_T
+AC_TYPE_UINT32_T
+AC_TYPE_UINT64_T
+
 AC_CHECK_LIB([boost_program_options], [main], [],[
          echo "boost_program_options library is required for this program"
          exit -1])
