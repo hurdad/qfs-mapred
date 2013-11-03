@@ -58,3 +58,21 @@ Getting Started
 Quick Start
 ----------------------
 
+#### Build qfs and run standalone example:
+```
+export BASEPATH=$PWD
+git clone https://github.com/quantcast/qfs.git && cd qfs && make release 
+python examples/sampleservers/sample_setup.py -a install
+```
+ 
+#### Build qfs-mapred and run wordcount example:
+```
+cd $BASE
+git clone https://github.com/hurdad/qfs-mapred.git
+./autogen.sh
+export CPPFLAGS=-I$BASEPATH/build/release/include
+export LDFLAGS=-L$BASEPATH/build/release/lib
+./configure --prefix=$(pwd)
+make && make install
+```
+
