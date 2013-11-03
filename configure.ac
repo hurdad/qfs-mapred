@@ -1,7 +1,7 @@
 dnl Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.59)
-AC_INIT(qfs_mapred, 1.0)
+AC_INIT(qfs-mapred, 1.0)
 
 AC_CHECK_FUNCS([iswprint]) 
 AC_CHECK_HEADERS([fcntl.h])
