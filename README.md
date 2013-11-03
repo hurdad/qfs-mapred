@@ -67,8 +67,9 @@ python examples/sampleservers/sample_setup.py -a install
  
 #### Build qfs-mapred and run wordcount example:
 ```
-cd $BASE
+cd $BASEPATH
 git clone https://github.com/hurdad/qfs-mapred.git
+cd qfs-mapred
 ./autogen.sh
 export CPPFLAGS=-I$BASEPATH/build/release/include
 export LDFLAGS=-L$BASEPATH/build/release/lib
