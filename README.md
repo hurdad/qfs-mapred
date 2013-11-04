@@ -1,11 +1,11 @@
 Overview
 =============
 
-qfs_mapred is a simple streaming map reduce implementation using qfs and gearman.
+qfs-mapred is a simple streaming map reduce implementation using qfs and gearman.
 
 Components
 -------
-QFS – Quantcast File System : Distributed, fault tolerant file system based on GFS, written in C++. Swap out replacement for Hadoop's HDFS.
+QFS – [Quantcast File System](https://github.com/quantcast/qfs): Distributed, fault tolerant file system based on GFS, written in C++. Swap out replacement for Hadoop's HDFS.
 
 Gearman – Job queue framework used to send generic task to workers. Simple framework for forking application code to other computers. 
 
