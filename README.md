@@ -5,7 +5,7 @@ qfs_mapred is a simple streaming map reduce implementation using qfs and gearman
 
 Components
 -------
-Qfs – Quantcast File System : Distributed, fault tolerant file system based on GFS, written in C++. Swap out replacement for Hadoop's HDFS.
+QFS – Quantcast File System : Distributed, fault tolerant file system based on GFS, written in C++. Swap out replacement for Hadoop's HDFS.
 
 Gearman – Job queue framework used to send generic task to workers. Simple framework for forking application code to other computers. 
 
@@ -65,7 +65,7 @@ git clone https://github.com/quantcast/qfs.git && cd qfs && make release
 python examples/sampleservers/sample_setup.py -a install
 ```
  
-#### Build qfs-mapred and run wordcount example:
+#### Build qfs-mapred
 ```
 cd $BASEPATH
 git clone https://github.com/hurdad/qfs-mapred.git
@@ -77,3 +77,8 @@ export LDFLAGS=-L${BASEPATH}/qfs/build/release/lib
 make && make install
 ```
 
+#### Start Gearman Job Server
+`gearmand --listen localhost --port 5000 --daemon --log-file ${BASEPATH}gearmand.log`
+
+### Run wordcount example
+`cd $BASEPATH/qfs-mapred/example && sh wordcount.sh`
