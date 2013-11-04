@@ -80,5 +80,8 @@ make && make install
 #### Start Gearman Job Server
 `gearmand --listen localhost --port 5000 --daemon --log-file ${BASEPATH}gearmand.log`
 
-### Run wordcount example
-`cd $BASEPATH/qfs-mapred/example && sh wordcount.sh`
+#### Run wordcount example
+```
+cd $BASEPATH/qfs-mapred/example && sh wordcount.sh
+cat wc_output.txt
+```
